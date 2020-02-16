@@ -1,0 +1,22 @@
+
+pwd
+
+nano ~/.bash_profile
+
+source ~/.bash_profile
+
+alias md="mkdir"
+alias d="date"
+alias hy="history"
+
+less javanese.txt
+
+export LESS="-N"
+
+export PS1="c[○┬●]כ "
+
+env
+
+env | grep LESS
+
+export LESS="--LINE-NUMBERS -R"
