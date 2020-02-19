@@ -1,5 +1,3 @@
-
-
 #!/bin/bash
 
 echo "Welcome to the script"
@@ -15,27 +13,32 @@ read versioncontinue
 if [ $versioncontinue -eq 1 ]
 then
   echo "OK"
-  #cd build
+ 
   for filename in source/*
   do
-   echo $filename
    
-   if [ "$filename" == “source/secretinfo.md” ]
+   
+    if [ "$filename" != "source/secretinfo.md" ]
     then
-      echo $filename "is not being copied"
+      cp $filename build/. ; echo $filename "is being copied" 
+      
     else
-      echo $filename "is being copied"
-      cp $filename build/.
-  fi 
-  cd ..
-  echo "Build version $version contains:"
-  ls build
+      echo $filename "is not being copied"
+      
+    fi 
+  
+ 
   
   done
-  
+  echo "Build version $version contains:"
+  ls build
+  cd ..
 else
   echo "Please come back when you are ready"
 fi
+
+
+
 
 
 
